@@ -15,5 +15,13 @@ attr_accessor :name
   def self.destroy_all
     @@all = []
   end
-
+  
+  def save
+   self.class.all << self
+  end
+  
+  def self.create(song)
+    song = song.new
+    song.save
+    song
 end
